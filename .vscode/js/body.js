@@ -60,7 +60,7 @@ function addToCart(productId) {
     if (product) {
         cart.push(product);
         updateCartCount();
-        alert(`¡${product.name} agregado al carrito!`);
+        alert(`¡${product.name} added to cart!`);
     }
 }
 
