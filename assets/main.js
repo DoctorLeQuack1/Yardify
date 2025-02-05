@@ -10,9 +10,9 @@ const shop_cart = new ShopCart();
 signUpButton.addEventListener('click', function (event) {
     event.preventDefault();
 
-    const prod = new Product("Tienda", 30, "../banana.jpg");
+    const prod = new Product("HotDog", 30, "../banana.jpg");
     const prod2 = new Product("Banana", 8, "../banana.jpg");
-    const prod3 = new Product("Kantepuerc", 2000, "../banana.jpg");
+    const prod3 = new Product("Apple", 2000, "../banana.jpg");
     shop_cart.addProductInfoToCart(prod);
     shop_cart.addProductInfoToCart(prod2);
     shop_cart.addProductInfoToCart(prod3);

@@ -40,7 +40,7 @@ class ShopCart {
 
         //Segunda Col
         const item_desc_div = document.createElement('div');
-        item_desc_div.classList.add('col');
+        item_desc_div.classList.add('col', 'div_span');
 
         const item_name = document.createElement("span");
         item_name.classList.add('span_item_name');
@@ -74,6 +74,7 @@ class ShopCart {
         document.querySelector('#cart-section').append(prod_card);
         document.querySelector('#empty-cart-section').style.display = 'none'; // Oculta la sección vacía
         document.querySelector('#cart-section').style.display = 'block'; // Muestra la sección del carrito
+        document.querySelector('#empty_cart').disabled = false;
 
     }
 
@@ -87,6 +88,8 @@ class ShopCart {
         } else {
             document.querySelector('#empty-cart-section').style.display = 'flex'; // Muestra la sección vacía
             document.querySelector('#cart-section').style.display = 'none'; // Oculta la sección del carrito
+            document.querySelector('#empty_cart').disabled = true;
+
         }
     }
 
@@ -94,10 +97,13 @@ class ShopCart {
 
         const storedCart = JSON.parse(localStorage.getItem('shop_cart')) || {};
         this.products = storedCart;
+        console.log('Button Clicked');
 
-       // delete this.products[button_clicked.closest('.span_item_name')];
+        const div_span_ = button_clicked.closest('.data-product');
+        const div_span_description = div_span_.querySelector('.span_item_name');
+        delete this.products[div_span_description.textContent];
         console.log(button_clicked.closest('.data-product'));
-        // button_clicked.closest('.data-product').remove();
+        button_clicked.closest('.data-product').remove();
 
         localStorage.setItem('shop_cart', JSON.stringify(this.products));
         
