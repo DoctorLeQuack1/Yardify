@@ -43,6 +43,7 @@ class ShopCart {
         item_desc_div.classList.add('col');
 
         const item_name = document.createElement("span");
+        item_name.classList.add('span_item_name');
         item_name.textContent = value.name
         item_name.style.display = "block";
 
@@ -58,8 +59,12 @@ class ShopCart {
 
         const trash_button = document.createElement("button");
         trash_button.type = 'button';
-        trash_button.className = 'btn';
+        trash_button.classList.add('btn');
         trash_button.textContent = '\u{1F5D1}';
+        trash_button.addEventListener('click', (event) => {
+            event.preventDefault();
+            this.deleteCartProduct(event.target);
+        });
 
         trash_button_div.appendChild(trash_button);
 
@@ -82,6 +87,23 @@ class ShopCart {
         } else {
             document.querySelector('#empty-cart-section').style.display = 'flex'; // Muestra la sección vacía
             document.querySelector('#cart-section').style.display = 'none'; // Oculta la sección del carrito
+        }
+    }
+
+    deleteCartProduct(button_clicked) {
+
+        const storedCart = JSON.parse(localStorage.getItem('shop_cart')) || {};
+        this.products = storedCart;
+
+       // delete this.products[button_clicked.closest('.span_item_name')];
+        console.log(button_clicked.closest('.data-product'));
+        // button_clicked.closest('.data-product').remove();
+
+        localStorage.setItem('shop_cart', JSON.stringify(this.products));
+        
+
+        if (Object.keys(this.products).length <= 0){
+            this.renderCart();
         }
     }
 
