@@ -10,9 +10,32 @@
 </head>
 
 <body>
-    <!-- Aquí va el contenido de tu página -->
+    <!-- Aquí va el contenido de tu página --
+    <header id="header-container"></header> -->
+    <main>
+        <!-- <section id="shoping-container"></section> -->
+        <section id="cart-container"></section>
+    </main>
+    <!-- <footer id="footer-container"></footer> -->
 
     <!-- Al final del body, cargamos los scripts -->
+
+    <script>
+        async function loadHTML(elementId, file) {
+            const response = await fetch(file);
+            const content = await response.text();
+            document.getElementById(elementId).innerHTML = content;
+            console.log(document.getElementById(elementId).innerHTML);
+        }
+
+        // Cargar fragmentos HTML
+        // loadHTML("header-container", "header.html");
+        // loadHTML("shoping-container", "content.html");
+        loadHTML("cart-container", "./cart-container/shopingCart.html");
+        // loadHTML("footer-container", "footer.html");
+    </script>
+
+    <script type="module" src="./global_assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

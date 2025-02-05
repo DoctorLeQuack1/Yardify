@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <div class="row border-bottom align-items-center">
+        <div class="col">
+            Shopping Cart
+        </div>
+        <div class="col">
+
+            <button id="add_prod_button" type="button" class="btn">Add Product</button>
+            <button id="render_cart_button" type="button" class="btn">Render Cart</button>
+        </div>
+
+        <div class="col text-end">
+            <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <div id="cart-section"></div>
+
+    <div id="empty-cart-section" class="row justify-content-center align-items-center" style="display: none;">
+        <img src="./../../cart-container/delete.png" alt="empty-cart" style="max-width: 400px; max-height: 400px;">
+    </div>
+
+    <!-- Button trigger modal -->
+    <button id="empty_cart" type="button" class="btn btn-primary" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop">
+        Empty Cart
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Are you sure you want to empty yout cart?
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    You will lose all of your items!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button id="del_cart_prod" type="button" class="btn btn-primary" data-bs-dismiss="modal">Delete
+                        Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of container -->
+</div>
+<script type="module" src="./assets/cart_main.js"></script>
