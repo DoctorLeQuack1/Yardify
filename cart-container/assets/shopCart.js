@@ -32,7 +32,7 @@ class ShopCart {
         img_div.classList.add('col-auto', 'p-0');
 
         const img_ = document.createElement('img');
-        img_.src = '../../cart-container/banana.jpg';
+        img_.src = '/cart-container/banana.jpg';
         img_.height = '150';
         img_.width = '150';
 
