@@ -32,7 +32,7 @@ class ShopCart {
         img_div.classList.add('col-auto', 'p-0');
 
         const img_ = document.createElement('img');
-        img_.src = '/cart-container/banana.jpg';
+        img_.src = value.img;
         img_.height = '150';
         img_.width = '150';
 
@@ -48,7 +48,7 @@ class ShopCart {
         item_name.style.display = "block";
 
         const item_price = document.createElement("span");
-        item_price.textContent = value.price
+        item_price.textContent = "$" + value.price
         item_price.style.display = "block";
 
         item_desc_div.append(item_name, item_price)
@@ -59,13 +59,10 @@ class ShopCart {
 
         const trash_button = document.createElement("button");
         trash_button.type = 'button';
+        trash_button.classList.add('trash-button');
+        trash_button.setAttribute("data-id", value.name);
         trash_button.classList.add('btn');
         trash_button.textContent = '\u{1F5D1}';
-        trash_button.addEventListener('click', (event) => {
-            event.preventDefault();
-            this.deleteCartProduct(event.target);
-        });
-
         trash_button_div.appendChild(trash_button);
 
         //Add all elements to car section
@@ -97,18 +94,24 @@ class ShopCart {
 
         const storedCart = JSON.parse(localStorage.getItem('shop_cart')) || {};
         this.products = storedCart;
-        console.log('Button Clicked');
 
-        const div_span_ = button_clicked.closest('.data-product');
-        const div_span_description = div_span_.querySelector('.span_item_name');
-        delete this.products[div_span_description.textContent];
-        console.log(button_clicked.closest('.data-product'));
-        button_clicked.closest('.data-product').remove();
+        const deletedItem = button_clicked.getAttribute("data-id");
+        console.log(deletedItem);
 
+        delete this.products[deletedItem];
+
+        // Subir al padre adecuado antes de buscar `.data-product`
+        const productElement = button_clicked.closest('.col-auto')?.closest('.data-product');
+
+        if (!productElement) {
+            console.error("No element found on DOM.");
+            return; // Evita llamar a .remove() en null
+        }
+
+        productElement.remove(); // Eliminar del carrito
         localStorage.setItem('shop_cart', JSON.stringify(this.products));
-        
 
-        if (Object.keys(this.products).length <= 0){
+        if (Object.keys(this.products).length <= 0) {
             this.renderCart();
         }
     }
@@ -118,6 +121,26 @@ class ShopCart {
         localStorage.clear();
         document.querySelectorAll('[class*="data-product"]').forEach(elemento => elemento.remove());
         this.renderCart();
+    }
+
+    renderTotal() {
+        const storedCart = JSON.parse(localStorage.getItem('shop_cart')) || {};
+        this.products = storedCart;
+
+        const total_amount = document.querySelector("#total_pay");
+        let total_price = 0;
+        if (Object.keys(this.products).length > 0) {
+            for (const key in this.products) {
+                console.log(this.products[key].price);
+                total_price = total_price + this.products[key].price;
+            }
+        }
+        else {
+            total_price = 0;
+        }
+
+        total_amount.textContent = "$" + total_price.toFixed(2);
+
     }
 }
 

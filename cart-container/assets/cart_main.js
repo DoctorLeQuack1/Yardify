@@ -11,16 +11,13 @@ signUpButton.addEventListener('click', function (event) {
     event.preventDefault();
 
     const prod = new Product("HotDog", 30, "/cart-container/banana.jpg");
-    const prod2 = new Product("Banana", 8, "/cart-container/banana.jpg");
-    const prod3 = new Product("Apple", 2000, "../../banana.jpg");
     shop_cart.addProductInfoToCart(prod);
-    shop_cart.addProductInfoToCart(prod2);
-    shop_cart.addProductInfoToCart(prod3);
+
 });
 
 delButton.addEventListener('click', function (event) {
     event.preventDefault();
-
+    console.log("Holiiiiii")
     shop_cart.deleteCart();
 });
 

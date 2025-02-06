@@ -3,11 +3,6 @@
         <div class="col">
             Shopping Cart
         </div>
-        <div class="col">
-
-            <button id="add_prod_button" type="button" class="btn">Add Product</button>
-            <button id="render_cart_button" type="button" class="btn">Render Cart</button>
-        </div>
 
         <div class="col text-end">
             <button type="button" class="btn-close" aria-label="Close"></button>
@@ -20,11 +15,17 @@
         <img src="/cart-container/delete.png" alt="empty-cart" style="max-width: 400px; max-height: 400px;">
     </div>
 
-    <!-- Button trigger modal -->
-    <button id="empty_cart" type="button" class="btn btn-primary" data-bs-toggle="modal"
-        data-bs-target="#staticBackdrop">
-        Empty Cart
-    </button>
+    <div id="total_pay" class="row align-items-center border-bottom"></div>
+
+    <div id="empty-cart-section" class="row justify-content-center align-items-center mt-3">
+        <div class="col-auto">
+            <button id="empty_cart" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop">
+                Empty Cart
+            </button>
+        </div>
+    </div>
+
 
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -50,4 +51,4 @@
 
     <!-- End of container -->
 </div>
-<script type="module" src="./assets/cart_main.js"></script>
+<script type="module" src="/global_assets/js/main.js"></script>
