@@ -13,14 +13,26 @@ shop_cart.renderTotal();
 
 const add_buttons = document.querySelectorAll(".add-to-cart");
 const empty_button = document.querySelector('#del_cart_prod');
-
+const cart_container = document.getElementById('cart-container');
+const shop_div_container = document.getElementById('shoping-container');
 
 document.addEventListener('click', function (event) {
+    event.preventDefault();
     if (event.target.classList.contains('trash-button')) {
         console.log("¡Botón clickeado!", event.target);
         shop_cart.deleteCartProduct(event.target);
         shopContainer.updateCartCount();
         shop_cart.renderTotal();
+    }
+
+    if (event.target.classList.contains('btn-close')) {
+        cart_container.style.display = "none";
+        shop_div_container.style.display = "block";
+    }
+
+    if (event.target.id == 'cart-button') {
+        cart_container.style.display = "block";
+        shop_div_container.style.display = "none";
     }
 });
 
