@@ -12,16 +12,16 @@
         <link rel="stylesheet" href="/global_assets/css/style.css">
 </head>
 
-<body>
-    <!-- Aquí va el contenido de tu página --
-    <header id="header-container"></header> -->
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+    <!-- Aquí va el contenido de tu página -->
+    <header id="header-container"></header> 
     <main>
         <section id="shoping-container"></section>
         <section id="cart-container" style="display: none;"></section>
-        <section id="footer-container"></section>
+        
     </main>
     <!-- <footer id="footer-container"></footer> -->
-
+    <footer id="footer-container" class="bg-dark text-light pt-4 pb-3 footer sticky-bottom"></footer>
     <!-- Al final del body, cargamos los scripts -->
 
     <script>
@@ -33,7 +33,7 @@
         }
 
         // Cargar fragmentos HTML
-        // loadHTML("header-container", "header.html");
+        loadHTML("header-container", "./header_container/header.html");
         loadHTML("shoping-container", "./shoping-container/shopingContainer.html");
         loadHTML("cart-container", "./cart-container/shopingCart.html");
         loadHTML("footer-container", "./footer-container/footer.html");

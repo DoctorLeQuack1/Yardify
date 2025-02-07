@@ -4,19 +4,19 @@ class ShopContainer {
         this.products = [
             {
                 id: 0,
-                name: "Maletín",
+                name: "Case",
                 price: 45.99,
                 image: "/shoping-container/images/maletin.png"
             },
             {
                 id: 1,
-                name: "Máquina de Escribir",
+                name: "Typing Machine",
                 price: 19.99,
                 image: "/shoping-container/images/maquinadeescribir.png"
             },
             {
                 id: 2,
-                name: "Reloj",
+                name: "Clock",
                 price: 89.99,
                 image: "/shoping-container/images/reloj.png"
             },
@@ -28,13 +28,13 @@ class ShopContainer {
             },
             {
                 id: 4,
-                name: "Teléfono",
+                name: "Vintage Telephone",
                 price: 129.99,
                 image: "/shoping-container/images/telefono.png"
             }
         ];
 
-        let cart = [];
+        
     }
 
     renderProduct(product) {
