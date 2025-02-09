@@ -139,7 +139,7 @@ class ShopCart {
             total_price = 0;
         }
 
-        total_amount.textContent = "$" + total_price.toFixed(2);
+        total_amount.textContent = "Your total is: $" + total_price.toFixed(2);
 
     }
 }
