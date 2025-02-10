@@ -6,31 +6,31 @@ class ShopContainer {
                 id: 0,
                 name: "Case",
                 price: 45.99,
-                image: "/shoping-container/images/maletin.png"
+                image: "../images/maletin.png"
             },
             {
                 id: 1,
                 name: "Typing Machine",
                 price: 19.99,
-                image: "/shoping-container/images/maquinadeescribir.png"
+                image: "../images/maquinadeescribir.png"
             },
             {
                 id: 2,
                 name: "Clock",
                 price: 89.99,
-                image: "/shoping-container/images/reloj.png"
+                image: "../images/reloj.png"
             },
             {
                 id: 3,
                 name: "Radio",
                 price: 59.99,
-                image: "/shoping-container/images/radio.png"
+                image: "../images/radio.png"
             },
             {
                 id: 4,
                 name: "Vintage Telephone",
                 price: 129.99,
-                image: "/shoping-container/images/telefono.png"
+                image: "../images/telefono.png"
             }
         ];
 
