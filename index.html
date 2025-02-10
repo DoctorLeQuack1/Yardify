@@ -9,14 +9,14 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./global_assets/css/style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
     <!-- Aquí va el contenido de tu página -->
     <header id="header-container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light py-4" id="home"
-            style="background-image: url('../global_assets/background-nav.jpg'); opacity: 0.5;">
+            style="background-image: url('./background-nav.jpg'); opacity: 0.5;">
             <div class="container-fluid py-3">
                 <a class="navbar-brand display-1" style="font-size: 5rem; margin-left: 25px;" href="#">Yardify</a>
 
@@ -179,22 +179,7 @@
     </footer>
     <!-- Al final del body, cargamos los scripts -->
 
-    <!-- <script>
-        async function loadHTML(elementId, file) {
-            const response = await fetch(file);
-            const content = await response.text();
-            document.getElementById(elementId).innerHTML = content;
-            console.log(document.getElementById(elementId).innerHTML);
-        }
-
-        // Cargar fragmentos HTML
-        loadHTML("header-container", "./header_container/header.html");
-        loadHTML("shoping-container", "./shoping-container/shopingContainer.html");
-        loadHTML("cart-container", "./cart-container/shopingCart.html");
-        loadHTML("footer-container", "./footer-container/footer.html");
-    </script> -->
-
-    <script type="module" src="./global_assets/js/main.js"></script>
+    <script type="module" src="./main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
