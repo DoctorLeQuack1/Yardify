@@ -83,3 +83,11 @@ anchors_.forEach(element => {
     
 });
 
+var animation = lottie.loadAnimation({
+    container: document.getElementById("lottie-container"),
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "/global_assets/emptyCart.json"
+  });
+

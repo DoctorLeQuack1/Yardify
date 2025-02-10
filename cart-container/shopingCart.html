@@ -12,15 +12,16 @@
     <div id="cart-section"></div>
 
     <div id="empty-cart-section" class="row justify-content-center align-items-center" style="display: none;">
-        <img src="/cart-container/delete.png" alt="empty-cart" style="max-width: 400px; max-height: 400px;">
+        <div id="lottie-container" style="max-width: 400px; min-width: 400px;"></div>
+        <h2 class="row justify-content-center align-items-center" style="color: #3F4F44;">Your cart is empty :(</h2>
     </div>
 
     <div id="total_pay" class="row align-items-center border-bottom"></div>
 
-    <div id="empty-cart-section" class="row justify-content-center align-items-center mt-3">
+    <div id="empty-cart-section" class="row justify-content-center align-items-center mt-3" style="margin-bottom: 17px;">
         <div class="col-auto">
             <button id="empty_cart" type="button" class="btn btn-primary" data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop">
+                data-bs-target="#staticBackdrop" style="background-color: #727D73; border-color: #727D73;">
                 Empty Cart
             </button>
         </div>
