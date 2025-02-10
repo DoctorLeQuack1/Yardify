@@ -30,7 +30,7 @@
 }
 
 .add-to-cart:hover::after {
-    content: "Añadir al carrito";
+    content: "Add to cart";
     position: absolute;
     right: 35px;
     background-color: black;
