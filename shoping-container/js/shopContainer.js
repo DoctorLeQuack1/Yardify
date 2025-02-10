@@ -6,7 +6,7 @@ class ShopContainer {
                 id: 0,
                 name: "Case",
                 price: 45.99,
-                image: "../images/maletin.png"
+                image: "/shoping-contianer/images/maletin.png"
             },
             {
                 id: 1,

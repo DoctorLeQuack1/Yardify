@@ -3,6 +3,8 @@ import Product from "../../cart-container/assets/products.js"
 import ShopCart from "../../cart-container/assets/shopCart.js"
 
 
+
+
 const shopContainer = new ShopContainer();
 const shop_cart = new ShopCart();
 
