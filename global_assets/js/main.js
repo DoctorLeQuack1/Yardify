@@ -88,6 +88,6 @@ var animation = lottie.loadAnimation({
     renderer: "svg",
     loop: true,
     autoplay: true,
-    path: "/global_assets/emptyCart.json"
+    path: "../emptyCart.json"
   });
 
